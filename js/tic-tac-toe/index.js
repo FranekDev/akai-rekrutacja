@@ -52,6 +52,7 @@ function checkWin() {
       };
   });
 
+  let isWinner = false;
   winCases.forEach(winCase => {
     const [posA, posB, posC] = winCase;
 
@@ -60,10 +61,20 @@ function checkWin() {
     const signC = gameField[posC].sign;
 
     if (signA !== '' && signA === signB && signA === signC) {
+      isWinner = true;
       alert('Wygral: ' + signA.toUpperCase());
       reset();
     }
+    
   });
+  
+  if (!isWinner) {
+    const isDraw = gameField.every(field => field.sign !== '');
+    if (isDraw) {
+      alert('Remis');
+      reset();
+    }
+  }
 }
 
 // 3. dodaj listener pod przycisk z napisaem "reset" tak, aby po jego kliknięciu wywołać funkcję reset
