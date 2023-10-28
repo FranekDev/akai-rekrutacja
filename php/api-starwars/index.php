@@ -1,0 +1,55 @@
+<?php
+// // @author: Michal Dolata <https://github.com/MichalDolata>
+// // @author: Marcin Lawniczak <marcin@lawniczak.me>
+// // @date: 26.09.2017
+// // @update: 26.09.2019
+// // This task does require Composer. You can add more libraries if you want to.
+// // We suggest using Guzzle for requests (http://docs.guzzlephp.org/en/stable/)
+// // Remember to composer install
+// // The script will be outputting to a web browser, so use HTML for formatting
+
+// // When making different kinds of applications, data is often needed that we don't yet have.
+// // Many 3rd party providers offer APIs (wikipedia.org/wiki/Application_programming_interface)
+// // that can be consumed to find data we need.
+
+// // Your task is to use the The Star Wars API (https://swapi.co/) and it's docs (https://swapi.co/documentation)
+// // Display all starships provided through the API, with their properties
+// // Each ship should have the names of pilots and names of films displayed (if none, indicate)
+// // Each pilot should have its species also displayed
+
+require 'vendor/autoload.php';
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+
+require 'functions.php';
+
+$client = new Client(['verify' => false, 'debug' => false]);
+
+
+$url = 'https://swapi.dev/api/starships';
+
+$uri = $_GET['page'] ?? '';
+// dd($_SERVER['REQUEST_URI']);
+
+try {
+    
+    if ($uri > 1) {
+        $url = $url . '?page=' . $uri;
+    }
+
+    $response = $client->get($url);
+
+    // $response = $client->request('GET', $url, ['headers' => $headers]);
+
+    $starships = json_decode($response->getBody(), true)['results'];
+
+    // echo "<pre>";
+    // print_r($starships);
+    // echo "</pre>";
+
+    require 'starships.php';
+
+} catch (GuzzleException $e) {
+    echo 'Wystąpił błąd: ' . $e->getMessage();
+}

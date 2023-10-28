@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --gradient-start: #000000;
+    --gradient-end: #000033;
+    --gradient-angle: 135deg;
+    --main-color: #151629;
+    --secondary-text: rgb(40, 44, 80);
+    --main-text: #ebeeff;
+}
+
+body {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 5px;
+}
+
+.starships {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.starship {
+    background-color: var(--main-color);
+    color: var(--main-text);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px 20px;
+}
+
+.starship-name, .starship-pilots, .starship-featuredin {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+
+}
+
+.starship-pilots__list, .starship-films {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.name, .pilots, .featured {
+    font-size: 0.8em;
+    color: var(--secondary-text);
+}
+
+ul li {
+    list-style: none;
+}
+
+ul, h3, h2, p {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+.nav > li {
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    background-color: var(--main-color);
+    color: var(--main-text);
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text);
+}
+
+h1 {
+    color: var(--main-text);
+}
