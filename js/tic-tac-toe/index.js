@@ -40,20 +40,26 @@ function checkWin() {
   ];
   
   const gameField = Array.from(board.children).map((current, index) => {
+
     let turnSign;
+
     if (current.classList.length > 1) {
       turnSign = current.classList[1].split('-')[1];
     } else {
       turnSign = '';
     }
-      return {
+
+    return {
         index: index,
         sign: turnSign
-      };
+    };
+
   });
 
   let isWinner = false;
+
   winCases.forEach(winCase => {
+
     const [posA, posB, posC] = winCase;
 
     const signA = gameField[posA].sign;
@@ -63,6 +69,7 @@ function checkWin() {
     if (signA !== '' && signA === signB && signA === signC) {
       isWinner = true;
       alert('Wygral: ' + signA.toUpperCase());
+
       reset();
     }
     
@@ -70,6 +77,7 @@ function checkWin() {
   
   if (!isWinner) {
     const isDraw = gameField.every(field => field.sign !== '');
+    
     if (isDraw) {
       alert('Remis');
       reset();
