@@ -30,7 +30,6 @@ $client = new Client(['verify' => false, 'debug' => false]);
 $url = 'https://swapi.dev/api/starships';
 
 $uri = $_GET['page'] ?? '';
-// dd($_SERVER['REQUEST_URI']);
 
 try {
     
@@ -40,13 +39,7 @@ try {
 
     $response = $client->get($url);
 
-    // $response = $client->request('GET', $url, ['headers' => $headers]);
-
     $starships = json_decode($response->getBody(), true)['results'];
-
-    // echo "<pre>";
-    // print_r($starships);
-    // echo "</pre>";
 
     require 'starships.php';
 
