@@ -1,0 +1,15 @@
+{
+  "name": "html-css",
+  "version": "1.0.0",
+  "description": "Zadanie rekrutacyjne Akai",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch css/main.scss css/form.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

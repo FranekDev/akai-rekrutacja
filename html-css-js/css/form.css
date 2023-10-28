@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: end;
+  gap: 20px;
+  padding: 20px 30px;
+  background-color: #fff5d6;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+form .input-field {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 5px;
+}
+form .input-field div {
+  border-bottom: 3px solid #fffaeb;
+}
+form .input-field p {
+  display: inline-block;
+  font-size: 0.7em;
+  color: #ff0000;
+}
+form .input-field .invalid {
+  color: #ff0000;
+}
+form .input-field #first-name,
+form .input-field #last-name,
+form .input-field #email {
+  font-size: 1.1em;
+  border: none;
+  padding: 5px;
+  background: transparent;
+}
+form .input-field #first-name:focus,
+form .input-field #last-name:focus,
+form .input-field #email:focus {
+  outline: none;
+}
+form .input-field .name-length,
+form .input-field .surname-length {
+  color: #7a7a7a;
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+}
+form .input-field #first-name::-webkit-input-placeholder,
+form .input-field #last-name::-webkit-input-placeholder,
+form .input-field #email::-webkit-input-placeholder {
+  color: whitesmoke;
+  font-family: "Roboto", sans-serif;
+}
+form .input-field #email {
+  border-bottom: 3px solid #fffaeb;
+  width: 100%;
+}
+form input[type=submit] {
+  background-color: #ff8400;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: whitesmoke;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+form input[type=submit]:hover {
+  background-color: #cf4307;
+}
+form .sections {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+form .sections p {
+  display: inline-block;
+  font-size: 0.7em;
+  color: #ff0000;
+}
+form .sections .checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+form .sections .checkboxes .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+form .sections .checkboxes .wrapper input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: #fffaeb;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: 0.1s;
+}
+form .sections .checkboxes .wrapper label {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+form .sections .checkboxes .wrapper input[type=checkbox]:after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  font-weight: 900;
+  color: #fffaeb;
+  display: none;
+}
+form .sections .checkboxes .wrapper input[type=checkbox]:hover,
+form .sections .checkboxes .wrapper input[type=checkbox]:checked {
+  background-color: #cf4307;
+}
+form .sections .checkboxes .wrapper input[type=checkbox]:checked:after {
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #cf4307;
+  color: #fff5d6;
+}
+
+body {
+  background-color: #fffaeb;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #130e01;
+  font-family: "Roboto", sans-serif;
+}
+
+#task-frontend {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#task-frontend .basic-title {
+  font-family: "Agbalumo", cursive;
+  font-size: 2rem;
+}
+
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,35 @@
+@use './scss/variables' as *;
+@use './scss/mixins' as *;
+@use './scss/form';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $accent;
+    color: $secondary;
+}
+
+body {
+    background-color: $bg;
+    width: 100vw;
+    height: 100vh;
+    @include flex(column, center, center);
+    color: $text;
+    font-family: $font-family;
+}
+
+#task-frontend {
+    width: auto;
+    height: auto;
+    @include flex(column, center, center);
+    gap: 20px;
+    
+    .basic-title {
+        font-family: $secondary-font;
+        font-size: 2rem;
+    }
+}
